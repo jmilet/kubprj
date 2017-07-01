@@ -5,5 +5,8 @@ run:
 install:
 	GOOS=$(GOOS) GOARCH=$(GOARCH) go install jmi/cmd/countersrv
 
+test:
+	go test jmi/randomstring
+
 clean:
 	rm -v $(GOPATH)/bin/server

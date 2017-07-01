@@ -1,7 +1,6 @@
-package randomstring_test
+package randomstring
 
 import (
-	. "randomstring"
 	"testing"
 )
 
