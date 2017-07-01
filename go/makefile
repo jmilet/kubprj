@@ -26,5 +26,5 @@ pushcontainer:
 
 clean:
 	rm -v $(GOPATH)/bin/countersrv
-	rm -v $(GOPATH)/bin/linux_amd64
-	rm -v $(GOPATH)/bin/freebsd_arm
+	rm -vrf $(GOPATH)/bin/linux_amd64
+	rm -vrf $(GOPATH)/bin/freebsd_arm
