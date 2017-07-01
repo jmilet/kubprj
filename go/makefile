@@ -1,6 +1,6 @@
 # Run server
 run:
-	go run src/jmi/cmd/countersrv/server.go
+	go run src/jmi/cmd/countersrv/main.go
 
 install:
 	GOOS=$(GOOS) GOARCH=$(GOARCH) go install jmi/cmd/countersrv
