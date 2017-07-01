@@ -1,3 +1,5 @@
 FROM alpine:latest
+ENV USERNAME jmimora
 ADD ./bin/linux_amd64/countersrv /app/
+RUN adduser -S ${USERNAME} -G nobody && chown nobody /app/* && chgrp nobody /app/*
 CMD /app/countersrv
