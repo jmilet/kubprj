@@ -1,2 +1,5 @@
 go/bin/**
 go/pkg/**
+**/*golang*/
+**/*github*/
+**/*sourcegraph*/
