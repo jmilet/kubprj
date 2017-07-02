@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  countersrv1:
+    build:
+      context: ./go
+      dockerfile: countersrv.df
+
+  countersrv2:
+    build:
+      context: ./go
+      dockerfile: countersrv.df
+
+  balancer:
+    image: nginx
+    volumes:
+      - ./arch/nginx.cf:/etc/nginx/nginx.conf
+    ports:
+      - 8080:80
+    depends_on:
+      - countersrv1
+      - countersrv2
