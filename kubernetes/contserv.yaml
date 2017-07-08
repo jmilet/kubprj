@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: List
+items:
+- apiVersion: extensions/v1beta1
+  kind: Deployment
+  metadata:
+    name: countersrv
+  spec:
+    replicas: 10
+    template:
+      metadata:
+        name: countersrv
+        labels:
+          app: countersrv
+      spec:
+        containers:
+        - image: jmilet/countersrv:v2
+          name: countersrv
+- apiVersion: v1
+  kind: Service
+  metadata:
+    name: countersrv
+  spec:
+    type: LoadBalancer
+    selector:
+      app: countersrv
+    ports:
+    - port: 9092
+      targetPort: 9092
